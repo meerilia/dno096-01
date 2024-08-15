@@ -1,49 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
-<style> 
-  /*para todo comentario*/
-html, body {
-  margin: 0;
-  padding: 0;
-  cursor: crosshair;
-}
-canvas {
-  display: block;
-}
-h1{
-  position:absolute;
-  top: 1rem;
-  left:3rem;
-  z-index: 2;
-}
-p{
-  position:absolute;
-  width: 50vw;
-  top: 4rem;
-  left:3rem;
-  z-index: 2;  
-}  
-</style>
-    <meta charset="utf-8"/>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <!--Busque su emoji en https://www.w3schools.com/html/html_emojis.asp-->
+        <title>🐖¡Segunda clase!</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <p> 
+                <a href="index.html" class="activo">Bienvenidi</a> 
+                <a href="page.html">Dibuje</a>
+            </p> 
+            <h1></h1>
+            <h2></h2>
+            <p>Tomé este curso porque quiero aprender cómo se hacen las páginas web:).</p>         
+        </header>
+        <main>
+        </main>
 
-  </head>
-  <body>
-    <main>
-    <h1>hola mundo!</h1>
-    <p> Tomé este curso porque quiero aprender a hacer páginas web:)
-    </main>
-    <script>
-    function setup() {
-  createCanvas(windowWidth,windowHeight);
-  background(128,255,0);
-  stroke(100);
-}
-function draw() {
-  line(pmouseX, pmouseY, mouseX, mouseY);
-  }
-</script>
-
-  </body>
+        <script>
+            var saludo = {
+                arriba:["chau","HOLI", "hello", "olaola"],
+                abajo:"Mi nombre es Melissa Cabrera"
+            };
+            var titular;
+            var nombre;
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                //selecciona un par de colores en https://materialui.co/colors
+                background('#F8BBD0');
+                stroke('#E91E63');
+                titular = select("h1");
+                titular.html(random(saludo.arriba));
+                nombre = select("h2");
+                nombre.html(saludo.abajo);
+            }
+            function draw () {
+                background('#F8BBD0');
+                text("🐇",pmouseX,pmouseY);
+                textSize(48);
+            }
+        </script>
+    </body>
 </html>
